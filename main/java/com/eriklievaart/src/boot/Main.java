@@ -15,8 +15,8 @@ import com.eriklievaart.toolkit.vfs.api.file.VirtualFile;
 public class Main {
 
 	public static void main(String[] args) {
-
-		File root = new File("/home/erikl/Development/git/toolkit");
+		File home = new File(System.getProperty("user.home"));
+		File root = new File(home, "Development/git/toolkit");
 		File java = new File(root, "main/java");
 		File lievaart = new File(java, "com/eriklievaart/toolkit");
 		for (VirtualFile bundle : new SystemFile(lievaart).getChildrenAlphabeticallyDirectoriesFirst()) {
@@ -30,7 +30,7 @@ public class Main {
 	private static void scanImports(SystemFile bundle) {
 		Set<String> imports = new HashSet<>();
 		for (VirtualFile file : bundle.scan("java")) {
-			for (JavaLine scanned : new JavaFile((SystemFile) file).scanImports()) {
+			for (JavaLine scanned : new JavaFile(file).scanImports()) {
 				imports.add(Str.sub("$ ($)", scanned.getText(), file.getName()));
 			}
 		}

@@ -13,7 +13,7 @@ public class ImportFix {
 
 	public static void main(String[] args) {
 		String source = "toolkit";
-		String fix = "javalightning";
+		String fix = "links";
 		String filter = "import com.eriklievaart.toolkit.*";
 
 		Map<String, String> simpleToFull = indexSimpleToFullClasses(source);
