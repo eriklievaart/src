@@ -11,6 +11,7 @@ import com.eriklievaart.toolkit.vfs.api.file.SystemFile;
 import com.eriklievaart.toolkit.vfs.api.file.VirtualFile;
 
 public class Project {
+	private static final String JAVA = "java";
 
 	private String name;
 
@@ -36,15 +37,15 @@ public class Project {
 	}
 
 	public List<JavaFile> getMainJavaFiles() {
-		return toJavaFiles(getMainJavaDir().scan("java"));
+		return toJavaFiles(getMainJavaDir().scan(JAVA));
 	}
 
 	public List<JavaFile> getTestJavaFiles() {
-		return toJavaFiles(getTestJavaDir().scan("java"));
+		return toJavaFiles(getTestJavaDir().scan(JAVA));
 	}
 
 	public List<JavaFile> getAllJavaFiles() {
-		return toJavaFiles(getGitDir().scan("java"));
+		return toJavaFiles(getGitDir().scan(JAVA));
 	}
 
 	private List<JavaFile> toJavaFiles(Iterable<VirtualFile> sources) {
