@@ -29,5 +29,4 @@ public class JavaLine {
 	public boolean isChanged() {
 		return changed;
 	}
-
 }

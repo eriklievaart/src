@@ -19,7 +19,7 @@ public class Main {
 		File root = new File(home, "Development/git/toolkit");
 		File java = new File(root, "main/java");
 		File lievaart = new File(java, "com/eriklievaart/toolkit");
-		for (VirtualFile bundle : new SystemFile(lievaart).getChildrenAlphabeticallyDirectoriesFirst()) {
+		for (VirtualFile bundle : new SystemFile(lievaart).getChildrenAdvanced().getAlphabeticallyDirectoriesFirst()) {
 			System.out.println(bundle.getName());
 			scanImports((SystemFile) bundle);
 			System.out.println();

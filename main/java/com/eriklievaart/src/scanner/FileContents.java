@@ -73,5 +73,4 @@ public class FileContents {
 		}
 		return false;
 	}
-
 }
